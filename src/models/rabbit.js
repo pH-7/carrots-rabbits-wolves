@@ -36,7 +36,7 @@ class Rabbit extends Animal {
   update() {
     this.healthCheck();
 
-    if (!this.isLiving) {
+    if (!this.isLiving()) {
       return;
     }
 

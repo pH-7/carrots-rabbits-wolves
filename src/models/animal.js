@@ -6,17 +6,17 @@ class Animal extends Food {
   constructor(world, position) {
     super(position);
 
-    this.isLiving = true;
+    this.living = true;
     this.healthScore = MAX_HEALTH_SCORE;
     this.world = world;
   }
 
   die() {
-    this.isLiving = false;
+    this.living = false;
   }
 
   isLiving() {
-    return this.isLiving;
+    return this.living;
   }
 
   decrementHealth() {

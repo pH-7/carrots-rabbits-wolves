@@ -88,7 +88,7 @@ class WorldStimulation extends World {
         animal.update();
         return animal;
       })
-      .filter((animal) => animal.isLiving);
+      .filter((animal) => animal.isLiving());
 
     this.carrots = this.carrots.filter((carrot) => carrot.isInStock());
   }
