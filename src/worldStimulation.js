@@ -90,7 +90,7 @@ class WorldStimulation extends World {
       })
       .filter((animal) => animal.isLiving);
 
-    this.carrots = this.carrots.filter((carrot) => carrot.quantity > 0);
+    this.carrots = this.carrots.filter((carrot) => carrot.isInStock());
   }
 
   generateEmojiGraph() {
