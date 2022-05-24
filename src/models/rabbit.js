@@ -67,11 +67,9 @@ class Rabbit extends Animal {
       this.setToNewPlace();
     }
 
-    const hasCarrotBeenEaten = () => {
-      nearbyCarrot &&
-        nearbyCarrot.isInStock() &&
-        this.world.arePositionsIdentical(this.position, nearbyCarrot.position);
-    };
+    const hasCarrotBeenEaten = () =>
+      nearbyCarrot?.isInStock() &&
+      this.world.arePositionsIdentical(this.position, nearbyCarrot.position);
 
     if (hasCarrotBeenEaten()) {
       this.eat(nearbyCarrot);
