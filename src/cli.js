@@ -51,10 +51,11 @@ await new Promise(resolve => setTimeout(resolve, 1000));
 
 try {
   setInterval(() => {
+    worldStimulation.update();
+
     // Generate the txt stimulation-results file
     generateTxtStats(worldStimulation, pathFile);
 
-    worldStimulation.update();
     // Output the result
     console.log(worldStimulation.generateEmojiGraph());
   }, INTERVAL_TIMEOUT_MS);
