@@ -10,7 +10,9 @@ export const WORLD = {
   foodDensity: 45,
 };
 
-export const MAX_HEALTH_SCORE = 15;
+export const ANIMALS = {
+  maxHealthScore: 20
+}
 
 export const LIVING_THINGS = {
   // Those values are the class names

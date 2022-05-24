@@ -1,4 +1,4 @@
-import { LIVING_THINGS, MAX_HEALTH_SCORE } from "../constants.js";
+import { ANIMALS } from "../constants.js";
 import Animal from "./animal.js";
 import Carrot from "./carrot.js";
 
@@ -8,7 +8,7 @@ class Rabbit extends Animal {
   }
 
   increaseHealth() {
-    if (this.healthScore < MAX_HEALTH_SCORE) {
+    if (this.healthScore < ANIMALS.maxHealthScore) {
       this.healthScore += 1;
     } else {
       this.newRabbit();
@@ -40,10 +40,10 @@ class Rabbit extends Animal {
       return;
     }
 
-    this.seekCarrotNearby();
+    this.seekCarrotsNearby();
   }
 
-  seekCarrotNearby() {
+  seekCarrotsNearby() {
     const initialValues = { distance: null, carrot: null };
     const reducer = (nearby, carrot) => {
       const distance = this.world.getDistance(this.position, carrot.position);
