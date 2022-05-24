@@ -1,0 +1,27 @@
+{
+  "name": "11point2 project",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "- Run `npm install` - Run `node src/cli.js` - See the results shown in the command line - See the results in the `world-stimulation-results.txt`",
+  "main": "src/cli.js",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.14.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Pierre-Henry Soria",
+  "dependencies": {
+    "array-shuffle": "^3.0.0",
+    "random-int": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "ava": "^4.2.0",
+    "babel": "^6.23"
+  }
+}
