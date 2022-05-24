@@ -59,7 +59,7 @@ class Animal extends Food {
       this.position,
       {
         horizontal: newHorizontal,
-        vertical: newHorizontal,
+        vertical: newVertical,
       }
     );
     if (arePositionsNotIdentical) {
