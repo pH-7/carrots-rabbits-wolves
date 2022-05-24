@@ -68,7 +68,7 @@ class Wolf extends Animal {
     }
 
     const hasRabbitBeenEaten = () =>
-      nearbyRabbit.isLiving &&
+      nearbyRabbit?.isLiving &&
       this.world.arePositionsIdentical(this.position, nearbyRabbit.position);
 
     if (hasRabbitBeenEaten()) {

@@ -55,10 +55,14 @@ class Animal extends Food {
       newVertical--;
     }
 
-    if (
-      this.position.vertical !== newHorizontal &&
-      this.position.vertical !== newHorizontal
-    ) {
+    const arePositionsNotIdentical = !this.world.arePositionsIdentical(
+      this.position,
+      {
+        horizontal: newHorizontal,
+        vertical: newHorizontal,
+      }
+    );
+    if (arePositionsNotIdentical) {
       const randomlyTrue = randomInteger(0, 1) === 0;
       if (randomlyTrue) {
         this.position.horizontal = newHorizontal;

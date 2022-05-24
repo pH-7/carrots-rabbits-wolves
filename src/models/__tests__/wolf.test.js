@@ -20,6 +20,7 @@ test("set to new home-place must changes the position", (t) => {
   const currentHorizontalPosition = t.context.wolf.position.horizontal;
   const currentVerticalPosition = t.context.wolf.position.vertical;
 
+  t.context.wolf.update();
   t.context.wolf.chasingTowards();
 
   t.is(currentHorizontalPosition, t.context.wolf.position.horizontal);
