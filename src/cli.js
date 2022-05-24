@@ -1,7 +1,7 @@
 import {
   SCRIPT_CHARSET,
   LIVING_THINGS,
-  INTERVAL_TIMEOUT_IN_MS,
+  INTERVAL_TIMEOUT_MS,
 } from "./constants.js";
 import WorldStimulation from "./worldStimulation.js";
 import fs from "fs";
@@ -57,7 +57,7 @@ try {
     worldStimulation.update();
     // Output the result
     console.log(worldStimulation.generateEmojiGraph());
-  }, INTERVAL_TIMEOUT_IN_MS);
+  }, INTERVAL_TIMEOUT_MS);
 } catch (err) {
   console.error(err);
 }

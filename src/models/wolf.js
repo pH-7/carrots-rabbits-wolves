@@ -19,7 +19,7 @@ class Wolf extends Animal {
       horizontal: this.position.horizontal,
       vertical: this.position.vertical,
     });
-    wolf.setToNewHomePlace();
+    wolf.setToNewPlace();
     return wolf;
   }
 
@@ -45,36 +45,36 @@ class Wolf extends Animal {
   // Retrieve the nearby rabbits nearby
   seekRabbitNearby() {
     const initialValues = { distance: null, rabbit: null };
-    const reducer = (nearbyRabbit, rabbit) => {
+    const reducer = (nearby, rabbit) => {
       const distance = this.world.getDistance(this.position, rabbit.position);
-      if (!nearbyRabbit.rabbit || distance < nearbyRabbit.distance) {
+      if (!nearby.rabbit || distance < nearby.distance) {
         return {
           distance,
           rabbit,
         };
       }
-      return nearbyRabbit;
+      return nearby;
     };
 
-    const nearby = this.world
-      .getAnimal(LIVING_THINGS.rabbit)
-      .reduce(reducer, initialValues);
+    const nearbyRabbit = this.world
+      .getAnimalByType(LIVING_THINGS.rabbit)
+      .reduce(reducer, initialValues)?.rabbit;
 
-    if (nearby.rabbit) {
-      this.destination = nearby.rabbit.position;
+    if (nearbyRabbit) {
+      this.destination = nearbyRabbit.position;
       this.chasingTowards();
     } else {
-      this.setToNewHomePlace();
+      this.setToNewPlace();
     }
 
     const hasRabbitBeenEaten = () => {
-      nearby.rabbit &&
-        nearby.rabbit.isLiving &&
-        this.world.arePositionsIdentical(this.position, nearby.rabbit.position);
+      nearbyRabbit &&
+        nearbyRabbit.isLiving &&
+        this.world.arePositionsIdentical(this.position, nearbyRabbit.position);
     };
 
     if (hasRabbitBeenEaten()) {
-      this.eat(nearby.rabbit);
+      this.eat(nearbyRabbit);
     } else {
       this.decrementHealth();
     }

@@ -20,7 +20,7 @@ test("set to new home-place must changes the position", (t) => {
   const currentHorizontalPosition = t.context.rabbit.position.horizontal;
   const currentVerticalPosition = t.context.rabbit.position.vertical;
 
-  t.context.rabbit.setToNewHomePlace();
+  t.context.rabbit.setToNewPlace();
 
   t.is(currentHorizontalPosition, t.context.rabbit.position.horizontal);
   t.is(currentVerticalPosition, t.context.rabbit.position.vertical);

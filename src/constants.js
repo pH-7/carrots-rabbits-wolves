@@ -1,5 +1,5 @@
 export const SCRIPT_CHARSET = "utf-8";
-export const INTERVAL_TIMEOUT_IN_MS = 1000;
+export const INTERVAL_TIMEOUT_MS = 1000;
 
 // World definition
 export const WORLD = {
@@ -10,7 +10,6 @@ export const WORLD = {
   foodDensity: 45,
 };
 
-// Max health score
 export const MAX_HEALTH_SCORE = 15;
 
 export const LIVING_THINGS = {
@@ -21,4 +20,4 @@ export const LIVING_THINGS = {
 };
 
 // Food
-export const CARROTS_QUANTITY = 10000;
+export const CARROTS_QUANTITY = 1000;

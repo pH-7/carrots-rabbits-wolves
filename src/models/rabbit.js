@@ -20,7 +20,7 @@ class Rabbit extends Animal {
       horizontal: this.position.horizontal,
       vertical: this.position.vertical,
     });
-    rabbit.setToNewHomePlace();
+    rabbit.setToNewPlace();
     return rabbit;
   }
 
@@ -45,36 +45,36 @@ class Rabbit extends Animal {
 
   seekCarrotNearby() {
     const initialValues = { distance: null, carrot: null };
-    const reducer = (nearbyCarrot, carrot) => {
+    const reducer = (nearby, carrot) => {
       const distance = this.world.getDistance(this.position, carrot.position);
-      if (!nearbyCarrot.carrot || distance < nearbyCarrot.distance) {
+      if (!nearby.carrot || distance < nearby.distance) {
         return {
           distance,
           carrot,
         };
       }
-      return nearbyCarrot;
+      return nearby;
     };
 
-    const nearby = this.world
-      .getAnimal(LIVING_THINGS.rabbit)
-      .reduce(reducer, initialValues);
+    const nearbyCarrot = this.world
+      .getCarrots()
+      .reduce(reducer, initialValues)?.carrot;
 
-    if (nearby.carrot) {
-      this.destination = nearby.carrot.position;
+    if (nearbyCarrot) {
+      this.destination = nearbyCarrot.position;
       this.chasingTowards();
     } else {
-      this.setToNewHomePlace();
+      this.setToNewPlace();
     }
 
     const hasCarrotBeenEaten = () => {
-      nearby.carrot &&
-        nearby.carrot.isLiving &&
-        this.world.arePositionsIdentical(this.position, nearby.carrot.position);
+      nearbyCarrot &&
+        nearbyCarrot.isInStock() &&
+        this.world.arePositionsIdentical(this.position, nearbyCarrot.position);
     };
 
     if (hasCarrotBeenEaten()) {
-      this.eat(nearby.carrot);
+      this.eat(nearbyCarrot);
     } else {
       this.decrementHealth();
     }

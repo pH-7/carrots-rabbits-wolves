@@ -5,6 +5,7 @@ class Food {
     position = { horizontal: WORLD.firstTile, vertical: WORLD.firstTile }
   ) {
     this.position = position;
+    this.destination = [];
   }
 }
 

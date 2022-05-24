@@ -39,7 +39,7 @@ class World {
     return map;
   }
 
-  getAnimal(type) {
+  getAnimalByType(type) {
     return this.animals.filter((animal) => {
       return animal.constructor.name === type;
     });

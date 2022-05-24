@@ -12,7 +12,7 @@ class Carrot extends Food {
     this.quantity--;
   }
 
-  available() {
+  isInStock() {
     return this.quantity > 0;
   }
 

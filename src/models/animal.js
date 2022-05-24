@@ -1,14 +1,12 @@
 import { MAX_HEALTH_SCORE, WORLD } from "../constants.js";
+import Food from "./food.js";
 import randomInteger from "random-int";
 
-class Animal {
-  constructor(
-    world,
-    position = { horizontal: WORLD.firstTile, vertical: WORLD.firstTile }
-  ) {
+class Animal extends Food {
+  constructor(world, position) {
+    super(position);
+
     this.isLiving = true;
-    this.position = position;
-    this.destination = [];
     this.healthScore = MAX_HEALTH_SCORE;
     this.world = world;
   }
@@ -73,7 +71,7 @@ class Animal {
     }
   }
 
-  setToNewHomePlace() {
+  setToNewPlace() {
     const amendPosition = this.position;
 
     let worldSide = randomInteger(1, 4); // The "world map" has 4 sides :)
