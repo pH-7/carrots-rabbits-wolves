@@ -36,11 +36,12 @@ class WorldStimulation extends World {
     const possiblePositions = arrayShuffle(
       this.generateMapPositions(WORLD.width, WORLD.height)
     );
-    const endPosition = randomInteger(10, 70);
+
     const position = possiblePositions.slice(
       0,
       randomInteger(1, WORLD.maxTiles)
     );
+    const endPosition = randomInteger(WORLD.maxTiles - 20, WORLD.maxTiles);
 
     for (let tile = 0; tile < endPosition; tile++) {
       this.animals.push(new Wolf(this, position[tile]));
@@ -52,11 +53,11 @@ class WorldStimulation extends World {
       this.generateMapPositions(WORLD.width, WORLD.height)
     );
 
-    const endPosition = randomInteger(10, 70);
     const position = possiblePositions.slice(
       0,
       randomInteger(1, WORLD.maxTiles)
     );
+    const endPosition = randomInteger(WORLD.maxTiles - 20, WORLD.maxTiles);
 
     for (let tile = 0; tile < endPosition; tile++) {
       this.animals.push(new Rabbit(this, position[tile]));

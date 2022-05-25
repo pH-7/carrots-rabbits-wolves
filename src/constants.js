@@ -7,7 +7,7 @@ export const WORLD = {
   maxTiles: 80,
   height: 80,
   width: 80,
-  foodDensity: 45,
+  foodDensity: 20,
 };
 
 export const ANIMALS = {
