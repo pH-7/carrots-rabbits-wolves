@@ -11,6 +11,7 @@ import path from "path";
 export const RESULT_FILENAME = "results.txt";
 
 const worldStimulation = new WorldStimulation();
+
 const updateFile = (pathFile, data) => {
   try {
     fs.appendFileSync(pathFile, data + os.EOL, { encoding: SCRIPT_CHARSET });

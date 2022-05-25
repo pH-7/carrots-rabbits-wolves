@@ -36,7 +36,9 @@ Let me know any questions you might have by email - hi@ph7.me
 
 Available in both `results.txt` and `world-stimulation-results.png` files.
 
-![Graphic Stimulation Results](./world-stimulation-results.png)
+![Early Stimulation Graphic Results](./world-stimulation-results.png)
+
+![Later Stimulation Graphic Results](./late-world-stimulation-results.png)
 
 
 Happy Hunting!
