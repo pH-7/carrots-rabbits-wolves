@@ -85,7 +85,7 @@ class WorldStimulation extends World {
     // Cleanup by excluding the dead animals
     this.animals = this.animals
       .map((animal) => {
-        animal.update();
+        animal.chase();
         return animal;
       })
       .filter((animal) => animal.isLiving());

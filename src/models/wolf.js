@@ -1,4 +1,4 @@
-import { LIVING_THINGS, MAX_HEALTH_SCORE } from "../constants.js";
+import { LIVING_THINGS, ANIMALS } from "../constants.js";
 import Animal from "./animal.js";
 
 class Wolf extends Animal {
@@ -7,7 +7,7 @@ class Wolf extends Animal {
   }
 
   increaseHealth() {
-    if (this.healthScore < MAX_HEALTH_SCORE) {
+    if (this.healthScore < ANIMALS.maxHealthScore) {
       this.healthScore += 1;
     } else {
       this.newWolf(this.world);
@@ -32,18 +32,18 @@ class Wolf extends Animal {
     }
   }
 
-  update() {
+  chase() {
     this.healthCheck();
 
     if (!this.isLiving()) {
       return;
     }
 
-    this.seekRabbitNearby();
+    this.seekNearbyRabbits();
   }
 
   // Retrieve the nearby rabbits nearby
-  seekRabbitNearby() {
+  seekNearbyRabbits() {
     const initialValues = { distance: null, rabbit: null };
     const reducer = (nearby, rabbit) => {
       const distance = this.world.getDistance(this.position, rabbit.position);
@@ -62,7 +62,7 @@ class Wolf extends Animal {
 
     if (nearbyRabbit) {
       this.destination = nearbyRabbit.position;
-      this.chasingTowards();
+      this.moveTowards();
     } else {
       this.setToNewPlace();
     }

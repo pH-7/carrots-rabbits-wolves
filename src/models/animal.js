@@ -1,4 +1,4 @@
-import { MAX_HEALTH_SCORE, WORLD } from "../constants.js";
+import { ANIMALS, WORLD } from "../constants.js";
 import Food from "./food.js";
 import randomInteger from "random-int";
 
@@ -7,7 +7,7 @@ class Animal extends Food {
     super(position);
 
     this.living = true;
-    this.healthScore = MAX_HEALTH_SCORE;
+    this.healthScore = ANIMALS.maxHealthScore;
     this.world = world;
   }
 
@@ -28,18 +28,18 @@ class Animal extends Food {
   }
 
   healthCheck() {
-    if (this.healthScore >= MAX_HEALTH_SCORE) {
-      this.healthScore = MAX_HEALTH_SCORE;
+    if (this.healthScore >= ANIMALS.maxHealthScore) {
+      this.healthScore = ANIMALS.maxHealthScore;
     } else if (this.healthScore <= 0) {
       this.die();
     }
   }
 
   canBeReproduced() {
-    return this.healthScore >= MAX_HEALTH_SCORE;
+    return this.healthScore >= ANIMALS.maxHealthScore;
   }
 
-  chasingTowards() {
+  moveTowards() {
     let newHorizontal = this.position.horizontal;
     let newVertical = this.position.vertical;
 
@@ -64,11 +64,7 @@ class Animal extends Food {
     );
     if (arePositionsNotIdentical) {
       const randomlyTrue = randomInteger(0, 1) === 0;
-      if (randomlyTrue) {
-        this.position.horizontal = newHorizontal;
-      } else {
-        this.position.vertical = newVertical;
-      }
+      (randomlyTrue) ? this.position.horizontal = newHorizontal : this.position.vertical = newVertical;
     } else {
       this.position.horizontal = newHorizontal;
       this.position.vertical = newVertical;
