@@ -3,14 +3,14 @@ import {
   LIVING_THINGS,
   INTERVAL_TIMEOUT_MS,
 } from "./constants.js";
-import WorldStimulation from "./worldStimulation.js";
+import WorldSimulation from "./worldSimulation.js";
 import fs from "fs";
 import os from "os";
 import path from "path";
 
 export const RESULT_FILENAME = "results.txt";
 
-const worldStimulation = new WorldStimulation();
+const worldSimulation = new WorldSimulation();
 
 const updateFile = (pathFile, data) => {
   try {
@@ -43,22 +43,22 @@ const generateTxtStats = (world, pathFile) => {
   updateFile(pathFile, testResult);
 };
 
-// Starting the stimulation
+// Starting the simulation
 const pathFile = path.resolve(path.dirname("")) + "/" + RESULT_FILENAME;
-console.info(`Stimulation results will be generated in ${pathFile}`);
+console.info(`Simulation results will be generated in ${pathFile}`);
 
-// Wait for one second before starting the world stimulation
+// Wait for one second before starting the world simulation
 await new Promise(resolve => setTimeout(resolve, 1000));
 
 try {
   setInterval(() => {
-    worldStimulation.update();
+    worldSimulation.update();
 
-    // Generate the txt stimulation-results file
-    generateTxtStats(worldStimulation, pathFile);
+    // Generate the txt simulation-results file
+    generateTxtStats(worldSimulation, pathFile);
 
     // Output the result
-    console.log(worldStimulation.generateEmojiGraph());
+    console.log(worldSimulation.generateEmojiGraph());
   }, INTERVAL_TIMEOUT_MS);
 } catch (err) {
   console.error(err);

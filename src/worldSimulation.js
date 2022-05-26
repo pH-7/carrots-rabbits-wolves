@@ -7,7 +7,7 @@ import World from "./models/world.js";
 import arrayShuffle from "array-shuffle";
 import randomInteger from "random-int";
 
-class WorldStimulation extends World {
+class WorldSimulation extends World {
   constructor() {
     super();
 
@@ -148,4 +148,4 @@ class WorldStimulation extends World {
   }
 }
 
-export default WorldStimulation;
+export default WorldSimulation;

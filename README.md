@@ -11,7 +11,7 @@
   - Run `npm install`
   - Then, run `node src/cli.js`
   - See the results shown in the command line.
-  - See the results in `world-stimulation-results.txt`
+  - See the results in `results.txt`
 
 ## Running unit tests
 
@@ -32,13 +32,13 @@ Let me know any questions you might have by email - hi@ph7.me
 ---
 
 
-### Stimulation Results
+### Simulation Results
 
-Available in both `results.txt` and `world-stimulation-results.png` files.
+Available in both `results.txt` and `world-simulation-results.png` files.
 
-![Early Stimulation Graphic Results](./world-stimulation-results.png)
+![Early Simulation Graphic Results](./world-simulation-results.png)
 
-![Later Stimulation Graphic Results](./late-world-stimulation-results.png)
+![Later Simulation Graphic Results](./late-world-simulation-results.png)
 
 
 Happy Hunting!
