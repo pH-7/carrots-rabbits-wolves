@@ -9,7 +9,7 @@ class Rabbit extends Animal {
 
   increaseHealth() {
     if (this.healthScore < ANIMALS.maxHealthScore) {
-      this.healthScore += 1;
+      this.healthScore +=2; // Increment health score by 2
     } else {
       this.newRabbit();
     }
