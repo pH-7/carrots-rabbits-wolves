@@ -11,12 +11,12 @@ class WorldSimulation extends World {
   constructor() {
     super();
 
-    this.sendRabbits();
-    this.sendWolves();
-    this.plantCarrots();
+    this.createRabbits();
+    this.createWolves();
+    this.growCarrots();
   }
 
-  plantCarrots() {
+  growCarrots() {
     const map = this.getWorld();
 
     for (let horizontal = 0; horizontal < WORLD.width; horizontal++) {
@@ -32,7 +32,7 @@ class WorldSimulation extends World {
     }
   }
 
-  sendWolves() {
+  createWolves() {
     const possiblePositions = arrayShuffle(
       this.generateMapPositions(WORLD.width, WORLD.height)
     );
@@ -48,7 +48,7 @@ class WorldSimulation extends World {
     }
   }
 
-  sendRabbits() {
+  createRabbits() {
     const possiblePositions = arrayShuffle(
       this.generateMapPositions(WORLD.width, WORLD.height)
     );
@@ -81,7 +81,7 @@ class WorldSimulation extends World {
       }
     }
 
-    this.plantCarrots();
+    this.growCarrots();
 
     // Cleanup by excluding the dead animals
     this.animals = this.animals
