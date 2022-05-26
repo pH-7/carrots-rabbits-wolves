@@ -21,7 +21,7 @@ class Animal extends Food {
 
   decrementHealth() {
     if (this.healthScore >= 0) {
-      --this.healthScore;
+      this.healthScore--;
     } else {
       this.die();
     }
