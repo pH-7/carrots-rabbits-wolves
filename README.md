@@ -1,4 +1,6 @@
-# Instruction
+# The Rabbits, Wolves, and Carrots' World
+
+*The world is inhabited by carrots, rabbits, and wolves.*
 
 ## Requirement
 
