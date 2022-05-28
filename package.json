@@ -1,5 +1,5 @@
 {
-  "name": "11point2 project",
+  "name": "wolves-rabbits",
   "version": "1.0.0",
   "type": "module",
   "description": "- Run `npm install` - Run `node src/cli.js` - See the results shown in the command line - See the results in the `world-stimulation-results.txt`",

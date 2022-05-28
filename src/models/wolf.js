@@ -1,5 +1,5 @@
-import { LIVING_THINGS, ANIMALS } from "../constants.js";
-import Animal from "./animal.js";
+import { LIVING_THINGS, ANIMALS } from '../constants.js';
+import Animal from './animal.js';
 
 class Wolf extends Animal {
   constructor(world, initialPosition) {
@@ -28,22 +28,22 @@ class Wolf extends Animal {
       rabbit.die();
       this.increaseHealth();
     } else {
-      console.warn("Wrong food given.");
+      console.warn('Wrong food given.');
     }
   }
 
-  update() {
+  chase() {
     this.healthCheck();
 
     if (!this.isLiving()) {
       return;
     }
 
-    this.seekRabbitsNearby();
+    this.seekNearbyRabbits();
   }
 
   // Retrieve the nearby rabbits nearby
-  seekRabbitsNearby() {
+  seekNearbyRabbits() {
     const initialValues = { distance: null, rabbit: null };
     const reducer = (nearby, rabbit) => {
       const distance = this.world.getDistance(this.position, rabbit.position);
@@ -62,7 +62,7 @@ class Wolf extends Animal {
 
     if (nearbyRabbit) {
       this.destination = nearbyRabbit.position;
-      this.chasingTowards();
+      this.moveTowards();
     } else {
       this.setToNewPlace();
     }

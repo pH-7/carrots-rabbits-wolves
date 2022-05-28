@@ -39,7 +39,7 @@ class Animal extends Food {
     return this.healthScore >= ANIMALS.maxHealthScore;
   }
 
-  chasingTowards() {
+  moveTowards() {
     let newHorizontal = this.position.horizontal;
     let newVertical = this.position.vertical;
 
@@ -64,11 +64,7 @@ class Animal extends Food {
     );
     if (arePositionsNotIdentical) {
       const randomlyTrue = randomInteger(0, 1) === 0;
-      if (randomlyTrue) {
-        this.position.horizontal = newHorizontal;
-      } else {
-        this.position.vertical = newVertical;
-      }
+      (randomlyTrue) ? this.position.horizontal = newHorizontal : this.position.vertical = newVertical;
     } else {
       this.position.horizontal = newHorizontal;
       this.position.vertical = newVertical;

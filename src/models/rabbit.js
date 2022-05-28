@@ -1,6 +1,6 @@
-import { ANIMALS } from "../constants.js";
-import Animal from "./animal.js";
-import Carrot from "./carrot.js";
+import { ANIMALS } from '../constants.js';
+import Animal from './animal.js';
+import Carrot from './carrot.js';
 
 class Rabbit extends Animal {
   constructor(world, startPosition) {
@@ -29,21 +29,21 @@ class Rabbit extends Animal {
       carrot.eaten();
       this.increaseHealth();
     } else {
-      console.warn("Wrong given food.");
+      console.warn('Wrong given food.');
     }
   }
 
-  update() {
+  chase() {
     this.healthCheck();
 
     if (!this.isLiving()) {
       return;
     }
 
-    this.seekCarrotsNearby();
+    this.seekNearbyCarrots();
   }
 
-  seekCarrotsNearby() {
+  seekNearbyCarrots() {
     const initialValues = { distance: null, carrot: null };
     const reducer = (nearby, carrot) => {
       const distance = this.world.getDistance(this.position, carrot.position);
@@ -62,7 +62,7 @@ class Rabbit extends Animal {
 
     if (nearbyCarrot) {
       this.destination = nearbyCarrot.position;
-      this.chasingTowards();
+      this.moveTowards();
     } else {
       this.setToNewPlace();
     }
