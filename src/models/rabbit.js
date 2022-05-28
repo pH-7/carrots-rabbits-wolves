@@ -1,6 +1,6 @@
-import { ANIMALS } from "../constants.js";
-import Animal from "./animal.js";
-import Carrot from "./carrot.js";
+import { ANIMALS } from '../constants.js';
+import Animal from './animal.js';
+import Carrot from './carrot.js';
 
 class Rabbit extends Animal {
   constructor(world, startPosition) {
@@ -9,7 +9,7 @@ class Rabbit extends Animal {
 
   increaseHealth() {
     if (this.healthScore < ANIMALS.maxHealthScore) {
-      this.healthScore +=2; // Increment health score by 2
+      this.healthScore += 2; // Increment health score by 2
     } else {
       this.newRabbit();
     }
@@ -29,7 +29,7 @@ class Rabbit extends Animal {
       carrot.eaten();
       this.increaseHealth();
     } else {
-      console.warn("Wrong given food.");
+      console.warn('Wrong given food.');
     }
   }
 

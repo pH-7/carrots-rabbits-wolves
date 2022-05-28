@@ -1,5 +1,5 @@
-import { LIVING_THINGS, ANIMALS } from "../constants.js";
-import Animal from "./animal.js";
+import { LIVING_THINGS, ANIMALS } from '../constants.js';
+import Animal from './animal.js';
 
 class Wolf extends Animal {
   constructor(world, initialPosition) {
@@ -8,7 +8,7 @@ class Wolf extends Animal {
 
   increaseHealth() {
     if (this.healthScore < ANIMALS.maxHealthScore) {
-      this.healthScore +=2; // Increment health score by 2
+      this.healthScore += 2; // Increment health score by 2
     } else {
       this.newWolf(this.world);
     }
@@ -28,7 +28,7 @@ class Wolf extends Animal {
       rabbit.die();
       this.increaseHealth();
     } else {
-      console.warn("Wrong food given.");
+      console.warn('Wrong food given.');
     }
   }
 
