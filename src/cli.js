@@ -61,5 +61,6 @@ try {
     console.log(worldSimulation.generateEmojiGraph());
   }, INTERVAL_TIMEOUT_MS);
 } catch (err) {
-  console.error(err);
+  // Console log exception error messages
+  console.error(err.message);
 }
