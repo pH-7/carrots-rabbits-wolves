@@ -25,7 +25,7 @@ Rabbits would roam this world eating car- rots that grew in random patches. When
 npm test
 ```
 
-Or simply with `npx`
+Or with `npx`
 
 ```console
 npx ava
