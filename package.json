@@ -13,6 +13,7 @@
   },
   "keywords": [],
   "author": "Pierre-Henry Soria",
+  "license": "MIT",
   "dependencies": {
     "array-shuffle": "^3.0.0",
     "random-int": "^3.0.0"
