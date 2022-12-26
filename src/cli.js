@@ -24,6 +24,7 @@ const updateFile = (pathFile, data) => {
 
 const generateTxtStats = (world, pathFile) => {
   const initialValues = { wolves: 0, rabbits: 0, carrots: 0 };
+
   const reducer = (stats, livingThing) => {
     const { name } = livingThing.constructor;
 
