@@ -2,7 +2,7 @@
   "name": "wolves-rabbits-carrots",
   "version": "1.0.0",
   "type": "module",
-  "description": "- Run `npm install` - Run `node src/cli.js` - See the results shown in the command line - See the results in `results.txt` file",
+  "description": "- Run `npm install` - Run `node src/cli.js` - See the results shown in command line / See the results in `results.txt` file",
   "main": "src/cli.js",
   "engines": {
     "node": ">=14.0.0",
@@ -11,7 +11,7 @@
   "scripts": {
     "test": "npm run build && ava --verbose"
   },
-  "keywords": [],
+  "keywords": ["rabbits", "wolves", "rabbits"],
   "author": "Pierre-Henry Soria",
   "license": "MIT",
   "dependencies": {
