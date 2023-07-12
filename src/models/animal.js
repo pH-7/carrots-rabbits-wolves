@@ -1,58 +1,58 @@
-import { ANIMALS, WORLD } from "../constants.js";
-import Food from "./food.js";
-import randomInteger from "random-int";
+import { ANIMALS, WORLD } from '../constants.js'
+import Food from './food.js'
+import randomInteger from 'random-int'
 
 class Animal extends Food {
   constructor(world, position) {
-    super(position);
+    super(position)
 
-    this.living = true;
-    this.healthScore = ANIMALS.maxHealthScore;
-    this.world = world;
+    this.living = true
+    this.healthScore = ANIMALS.maxHealthScore
+    this.world = world
   }
 
   die() {
-    this.living = false;
+    this.living = false
   }
 
   isLiving() {
-    return this.living;
+    return this.living
   }
 
   decrementHealth() {
     if (this.healthScore >= 0) {
-      this.healthScore--;
+      this.healthScore--
     } else {
-      this.die();
+      this.die()
     }
   }
 
   healthCheck() {
     if (this.healthScore >= ANIMALS.maxHealthScore) {
-      this.healthScore = ANIMALS.maxHealthScore;
+      this.healthScore = ANIMALS.maxHealthScore
     } else if (this.healthScore <= 0) {
-      this.die();
+      this.die()
     }
   }
 
   canBeReproduced() {
-    return this.healthScore >= ANIMALS.maxHealthScore;
+    return this.healthScore >= ANIMALS.maxHealthScore
   }
 
   moveTowards() {
-    let newHorizontal = this.position.horizontal;
-    let newVertical = this.position.vertical;
+    let newHorizontal = this.position.horizontal
+    let newVertical = this.position.vertical
 
     if (this.destination.horizontal > newHorizontal) {
-      newHorizontal++;
+      newHorizontal++
     } else if (this.destination.horizontal < newHorizontal) {
-      newHorizontal--;
+      newHorizontal--
     }
 
     if (this.destination.vertical > newVertical) {
-      newVertical++;
+      newVertical++
     } else if (this.destination.vertical < newVertical) {
-      newVertical--;
+      newVertical--
     }
 
     const arePositionsNotIdentical = !this.world.arePositionsIdentical(
@@ -61,20 +61,22 @@ class Animal extends Food {
         horizontal: newHorizontal,
         vertical: newVertical,
       }
-    );
+    )
     if (arePositionsNotIdentical) {
-      const randomlyTrue = randomInteger(0, 1) === 0;
-      (randomlyTrue) ? this.position.horizontal = newHorizontal : this.position.vertical = newVertical;
+      const randomlyTrue = randomInteger(0, 1) === 0
+      randomlyTrue
+        ? (this.position.horizontal = newHorizontal)
+        : (this.position.vertical = newVertical)
     } else {
-      this.position.horizontal = newHorizontal;
-      this.position.vertical = newVertical;
+      this.position.horizontal = newHorizontal
+      this.position.vertical = newVertical
     }
   }
 
   setToNewPlace() {
-    const amendPosition = this.position;
+    const amendPosition = this.position
 
-    let worldSide = randomInteger(1, 4); // The "world map" has 4 sides :)
+    let worldSide = randomInteger(1, 4) // The "world map" has 4 sides :)
 
     if (worldSide === 1) {
       if (
@@ -82,9 +84,9 @@ class Animal extends Food {
           horizontal: amendPosition.horizontal + 1,
         })
       ) {
-        amendPosition.horizontal++;
+        amendPosition.horizontal++
       }
-      worldSide++;
+      worldSide++
     }
 
     if (worldSide === 2) {
@@ -93,9 +95,9 @@ class Animal extends Food {
           horizontal: amendPosition.horizontal - 1,
         })
       ) {
-        amendPosition.horizontal--;
+        amendPosition.horizontal--
       }
-      worldSide++;
+      worldSide++
     }
 
     if (worldSide === 3) {
@@ -104,9 +106,9 @@ class Animal extends Food {
           vertical: amendPosition.vertical + 1,
         })
       ) {
-        amendPosition.vertical++;
+        amendPosition.vertical++
       }
-      worldSide++;
+      worldSide++
     }
 
     if (worldSide === 4) {
@@ -115,26 +117,26 @@ class Animal extends Food {
           vertical: amendPosition.vertical - 1,
         })
       ) {
-        amendPosition.vertical--;
+        amendPosition.vertical--
       }
     }
 
-    this.position = amendPosition;
+    this.position = amendPosition
   }
 
   noBarriers(currentPosition, newPosition) {
-    const position = { ...currentPosition, ...newPosition };
+    const position = { ...currentPosition, ...newPosition }
 
     if (position.horizontal < 0 || position.horizontal >= WORLD.width) {
-      return false;
+      return false
     }
 
     if (position.vertical < 0 || position.vertical >= WORLD.height) {
-      return false;
+      return false
     }
 
-    return true;
+    return true
   }
 }
 
-export default Animal;
+export default Animal
