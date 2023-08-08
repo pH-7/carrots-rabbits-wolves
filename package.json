@@ -11,7 +11,7 @@
   "scripts": {
     "check:prettier": "npx prettier . --check \"src/**/*.{ts,js,json}\" \"!package.json\"",
     "fix:prettier": "npx prettier --write \"**/*.{ts,js,json}\" \"!package.json\"",
-    "test": "npm run build && ava --verbose"
+    "test": "npx ava --verbose"
   },
   "keywords": [
     "rabbits",
