@@ -1,24 +1,24 @@
-import { CARROTS_QUANTITY } from '../constants.js'
-import Food from './food.js'
+import { CARROTS_QUANTITY } from '../constants.js';
+import Food from './food.js';
 
 class Carrot extends Food {
   constructor(startPosition) {
-    super(startPosition)
+    super(startPosition);
 
-    this.quantity = CARROTS_QUANTITY
+    this.quantity = CARROTS_QUANTITY;
   }
 
   eaten() {
-    this.quantity--
+    this.quantity--;
   }
 
   isInStock() {
-    return this.quantity > 0
+    return this.quantity > 0;
   }
 
   getRemainingQuantity() {
-    return this.quantity
+    return this.quantity;
   }
 }
 
-export default Carrot
+export default Carrot;

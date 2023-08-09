@@ -1,12 +1,10 @@
-import { WORLD } from '../constants.js'
+import { WORLD } from '../constants.js';
 
 class Food {
-  constructor(
-    position = { horizontal: WORLD.firstTile, vertical: WORLD.firstTile }
-  ) {
-    this.position = position
-    this.destination = []
+  constructor(position = { horizontal: WORLD.firstTile, vertical: WORLD.firstTile }) {
+    this.position = position;
+    this.destination = [];
   }
 }
 
-export default Food
+export default Food;
