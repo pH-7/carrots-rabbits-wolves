@@ -1,5 +1,5 @@
 import { CARROTS_QUANTITY } from '../../constants.js';
-import Carrot from '../carrot.js';
+import { Carrot } from '../carrot.js';
 import test from 'ava';
 
 test.beforeEach((t) => {

@@ -1,4 +1,4 @@
-import WorldSimulation from '../worldSimulation.js';
+import { WorldSimulation } from '../worldSimulation.js';
 import test from 'ava';
 
 test.beforeEach((t) => {

@@ -1,7 +1,7 @@
 import { LIVING_THINGS, ANIMALS } from '../constants.js';
-import Animal from './animal.js';
+import { Animal } from './animal.js';
 
-class Wolf extends Animal {
+export class Wolf extends Animal {
   constructor(world, initialPosition) {
     super(world, initialPosition);
   }
@@ -75,5 +75,3 @@ class Wolf extends Animal {
     }
   }
 }
-
-export default Wolf;

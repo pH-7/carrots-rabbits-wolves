@@ -1,13 +1,13 @@
 import { LIVING_THINGS, WORLD } from './constants.js';
-import Animal from './models/animal.js';
-import Carrot from './models/carrot.js';
-import Rabbit from './models/rabbit.js';
-import Wolf from './models/wolf.js';
-import World from './models/world.js';
+import { Animal } from './models/animal.js';
+import { Carrot } from './models/carrot.js';
+import { Rabbit } from './models/rabbit.js';
+import { Wolf } from './models/wolf.js';
+import { World } from './models/world.js';
 import arrayShuffle from 'array-shuffle';
 import randomInteger from 'random-int';
 
-class WorldSimulation extends World {
+export class WorldSimulation extends World {
   constructor() {
     super();
 
@@ -134,5 +134,3 @@ class WorldSimulation extends World {
     return map;
   }
 }
-
-export default WorldSimulation;

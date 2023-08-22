@@ -1,8 +1,8 @@
 import { ANIMALS, WORLD } from '../constants.js';
-import Food from './food.js';
+import { Food } from './food.js';
 import randomInteger from 'random-int';
 
-class Animal extends Food {
+export class Animal extends Food {
   constructor(world, position) {
     super(position);
 
@@ -133,5 +133,3 @@ class Animal extends Food {
     return true;
   }
 }
-
-export default Animal;

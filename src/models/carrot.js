@@ -1,7 +1,7 @@
 import { CARROTS_QUANTITY } from '../constants.js';
-import Food from './food.js';
+import { Food } from './food.js';
 
-class Carrot extends Food {
+export class Carrot extends Food {
   constructor(startPosition) {
     super(startPosition);
 
@@ -20,5 +20,3 @@ class Carrot extends Food {
     return this.quantity;
   }
 }
-
-export default Carrot;

@@ -1,5 +1,5 @@
-import Rabbit from '../rabbit.js';
-import World from '../world.js';
+import { Rabbit } from '../rabbit.js';
+import { World } from '../world.js';
 import test from 'ava';
 
 test.beforeEach((t) => {

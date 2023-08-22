@@ -1,6 +1,6 @@
 import { WORLD } from '../constants.js';
 
-class World {
+export class World {
   constructor() {
     this.animals = [];
     this.carrots = [];
@@ -49,5 +49,3 @@ class World {
     return [...this.animals, ...this.carrots];
   }
 }
-
-export default World;

@@ -1,5 +1,5 @@
 import { SCRIPT_CHARSET, LIVING_THINGS, INTERVAL_TIMEOUT_MS } from './constants.js';
-import WorldSimulation from './worldSimulation.js';
+import { WorldSimulation } from './worldSimulation.js';
 import fs from 'fs';
 import os from 'os';
 import path from 'path';

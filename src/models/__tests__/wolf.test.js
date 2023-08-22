@@ -1,5 +1,5 @@
-import Wolf from '../wolf.js';
-import World from '../world.js';
+import { Wolf } from '../wolf.js';
+import { World } from '../world.js';
 import test from 'ava';
 
 test.beforeEach((t) => {
