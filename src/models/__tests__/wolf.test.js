@@ -13,7 +13,7 @@ test('wolf must be able to reproduce themself by default', (t) => {
 
 test("wolf doesn't have barriers in front of them", (t) => {
   const size = { horizontal: 30, vertical: 40 };
-  t.true(t.context.wolf.noBarriers(size, size));
+  t.true(t.context.wolf.isValidPosition(size, size));
 });
 
 test('set to new home-place must changes the position', (t) => {

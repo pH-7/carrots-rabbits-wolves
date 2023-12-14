@@ -75,7 +75,7 @@ export class Animal extends Food {
 
     if (worldSide === 1) {
       if (
-        this.noBarriers(amendPosition, {
+        this.isValidPosition(amendPosition, {
           horizontal: amendPosition.horizontal + 1,
         })
       ) {
@@ -86,7 +86,7 @@ export class Animal extends Food {
 
     if (worldSide === 2) {
       if (
-        this.noBarriers(amendPosition, {
+        this.isValidPosition(amendPosition, {
           horizontal: amendPosition.horizontal - 1,
         })
       ) {
@@ -97,7 +97,7 @@ export class Animal extends Food {
 
     if (worldSide === 3) {
       if (
-        this.noBarriers(amendPosition, {
+        this.isValidPosition(amendPosition, {
           vertical: amendPosition.vertical + 1,
         })
       ) {
@@ -108,7 +108,7 @@ export class Animal extends Food {
 
     if (worldSide === 4) {
       if (
-        this.noBarriers(amendPosition, {
+        this.isValidPosition(amendPosition, {
           vertical: amendPosition.vertical - 1,
         })
       ) {
@@ -119,7 +119,7 @@ export class Animal extends Food {
     this.position = amendPosition;
   }
 
-  noBarriers(currentPosition, newPosition) {
+  isValidPosition(currentPosition, newPosition) {
     const position = { ...currentPosition, ...newPosition };
 
     if (position.horizontal < 0 || position.horizontal >= WORLD.width) {

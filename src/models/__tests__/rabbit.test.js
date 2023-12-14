@@ -13,7 +13,7 @@ test('rabbit must be able to reproduce themself by default', (t) => {
 
 test("rabbit doesn't have barriers in front of them", (t) => {
   const size = { horizontal: 30, vertical: 40 };
-  t.true(t.context.rabbit.noBarriers(size, size));
+  t.true(t.context.rabbit.isValidPosition(size, size));
 });
 
 test('set to new home-place must changes the position', (t) => {
