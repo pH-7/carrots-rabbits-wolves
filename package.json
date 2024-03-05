@@ -9,8 +9,8 @@
     "npm": ">=6.14.4"
   },
   "scripts": {
-    "check:prettier": "npx prettier . --check \"src/**/*.{ts,js,json}\" \"!package.json\"",
-    "fix:prettier": "npx prettier --write \"**/*.{ts,js,json}\" \"!package.json\"",
+    "prettier:check": "./node_modules/.bin/prettier --check \"src/**/*.{ts,js,json}\" \"!package.json\"",
+    "prettier:fix": "./node_modules/.bin/prettier --write \"**/*.{ts,js,json}\" \"!package.json\"",
     "test": "npx ava --verbose"
   },
   "keywords": [
