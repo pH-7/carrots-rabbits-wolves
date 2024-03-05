@@ -18,7 +18,7 @@ Rabbits would roam this world eating car- rots that grew in random patches. When
 
 - At the location to which the project has been unzipped,
   - Run `npm install` to install the dependencies.
-  - Then, run `node src/cli.js`
+  - Then, run `node src/cli.js` (or just `npm start`).
   - See the results shown in the command line.
   - See the results in `results.txt`
 
