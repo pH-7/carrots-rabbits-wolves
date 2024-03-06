@@ -1,3 +1,4 @@
+/*! 2022-2024 Pierre-Henry Soria | https://github.com/pH-7 */
 import { SCRIPT_CHARSET, LIVING_THINGS, INTERVAL_TIMEOUT_MS } from './constants.js';
 import { WorldSimulation } from './worldSimulation.js';
 import fs from 'fs';
