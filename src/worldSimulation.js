@@ -1,11 +1,13 @@
+/*! 2022-2024 Pierre-Henry Soria | https://github.com/pH-7 */
+import arrayShuffle from 'array-shuffle';
+import randomInteger from 'random-int';
+
 import { LIVING_THINGS, WORLD } from './constants.js';
 import { Animal } from './models/animal.js';
 import { Carrot } from './models/carrot.js';
 import { Rabbit } from './models/rabbit.js';
 import { Wolf } from './models/wolf.js';
 import { World } from './models/world.js';
-import arrayShuffle from 'array-shuffle';
-import randomInteger from 'random-int';
 
 export class WorldSimulation extends World {
   constructor() {
