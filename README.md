@@ -45,6 +45,8 @@ Available in both `results.txt` and `world-simulation-results.png` files.
 
 ---
 
+## Prototype of the Rabbits and Wolves World Simulation
+
 [![The Rabbits and Wolves World Project](https://i1.ytimg.com/vi/5rK3oReysz8/sddefault.jpg)](https://youtu.be/5rK3oReysz8)
 
 👉 [Click here to watch on YouTube](https://youtu.be/5rK3oReysz8)
