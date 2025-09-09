@@ -64,7 +64,7 @@ Available in both `results.txt` and `world-simulation-results.png` files.
 
 ☕️ Do you enjoy this project? Would you feel like **[offering me a coffee...?](https://ko-fi.com/phenry)** (spoiler alert: I love almond flat white! 😋)
 
-[![X @phenrysay][x-icon]](https://x.com/phenrysay "Follow Me on X") [![YouTube Tech Videos][yt-icon]](https://www.youtube.com/@pH7Programming "My YouTube Tech Channel") [![BlueSky][bsky-icon]](https://bsky.app/profile/ph7s.bsky.social "Follow Me on BlueSky") [![pH-7][github-icon]](https://github.com/pH-7 "Follow Me on GitHub")
+[![X @phenrysay][x-icon]](https://x.com/phenrysay "Follow Me on X") [![YouTube Tech Videos][yt-icon]](https://www.youtube.com/@pH7Programming "My YouTube Tech Channel") [![BlueSky][bsky-icon]](https://bsky.app/profile/ph7.me "Follow Me on BlueSky") [![pH-7][github-icon]](https://github.com/pH-7 "Follow Me on GitHub")
 
 
 ## License
